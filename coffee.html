@@ -58,9 +58,13 @@
     function makeCoffee(){
         console.log("I'm here!");
         MyImage.setAttribute('src', 'static/coffee_machine.jpg');
-        setTimeout(MyImage.setAttribute('src', 'static/coffee_mug.jpg'), 1500);
+        setTimeout(function () {
+                        MyImage.setAttribute('src', 'static/coffee_mug.jpg')
+                    }, 1500);
         // this is not working right now.
-        setTimeout(MyImage.setAttribute('src', 'static/coffee_beans.jpg'), 4000);
+        setTimeout(function () {
+                        MyImage.setAttribute('src', 'static/coffee_beans.jpg')
+                    }, 4000);
     }
 
     MyImage.addEventListener('click', makeCoffee);
