@@ -54,16 +54,18 @@
 
 
     // var myRevenueMessage = document.getElementById();
-    MyImage.addEventListener('click', makeCoffee);
 
     function makeCoffee(){
-        MyImage.setAttribute('src', 'static/coffee_mug.jpg');
-        console.log(hotdog);
-
+        console.log("I'm here!");
+        MyImage.setAttribute('src', 'static/coffee_machine.jpg');
+        setTimeout(MyImage.setAttribute('src', 'static/coffee_mug.jpg'), 1500);
+        // this is not working right now.
+        setTimeout(MyImage.setAttribute('src', 'static/coffee_beans.jpg'), 4000);
     }
 
-    var hotdog = "chicken apple";
+    MyImage.addEventListener('click', makeCoffee);
 
+  
     // use this JavaScript object in further study step
 
     var prices = {
