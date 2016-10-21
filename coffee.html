@@ -44,6 +44,8 @@
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery.js"></script>
+
 <script>
 
     // Set these variables to their DOM elements
@@ -51,24 +53,39 @@
     var MyImage = document.getElementById("coffee-image");
     // var oldsrc = MyImage.getAttribute('src');
     MyImage.setAttribute('src', 'static/coffee_beans.jpg');
-
+    var drinksOrdered = []
 
     // var myRevenueMessage = document.getElementById();
 
-    function makeCoffee(){
-        console.log("I'm here!");
+    function makeCoffee(drinkType){
+        
         MyImage.setAttribute('src', 'static/coffee_machine.jpg');
         setTimeout(function () {
                         MyImage.setAttribute('src', 'static/coffee_mug.jpg')
                     }, 1500);
-        // this is not working right now.
         setTimeout(function () {
                         MyImage.setAttribute('src', 'static/coffee_beans.jpg')
                     }, 4000);
+        drinksOrdered.push(drinkType);
+        console.log(drinksOrdered);      
+
     }
 
-    MyImage.addEventListener('click', makeCoffee);
+    $('#espresso').on('click', function () {
+                                makeCoffee("espresso");
+                    });
 
+    $('#latte').on('click', function () {
+                                makeCoffee("latte");
+                    });
+
+    $('#hot-chocolate').on('click', function () {
+                                makeCoffee("hot-chocolate");
+                    });
+
+
+    MyImage.addEventListener('click',
+                            function () { return makeCoffee('brew'); });
   
     // use this JavaScript object in further study step
 
